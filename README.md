@@ -1,1 +1,47 @@
 # fenixedu-dockerizer
+
+Create a simple webapp based on [http://start.fenixedu.org](start.fenixedu.org)
+for your framework projects.
+
+Example docker-compose that creates a linked db container and allows for
+a [http://github.com/jwilder/nginx-proxy](jwilder/nginx-proxy):
+```
+version: '2'
+services:
+    fenixedu:
+        image: diutsu/fenixedu
+        container_name: fenixedu-webapp
+        network_mode: "bridge"
+        environment:
+            - PROJECT_NAME=fenixedu
+            - PROJECT_VERSION=1.0.0-SNAPSHOT
+            - BENNU_VERSION=4.0.0.RC2
+            - DB_HOST=fenixedu-db
+            - DB_PORT=3306
+            - DB_DATABASE=fenixedu-db
+            - DB_USER=root
+            - DB_PASS=pass
+            - CONTEXT_PATH=/
+            - VIRTUAL_HOST=fenixedu.org
+        volumes:
+            - ./configs:/cfg
+        expose: 
+            - 8080
+        links:
+            - fenixedu-db:mysql
+    fenixedu-db:
+        image: mysql
+        container_name: fenixedu-db
+        environment:
+            - MYSQL_ROOT_PASSWORD=pass
+            - MYSQL_DATABASE=fenixdu-db
+```
+Note that you can also use your own mysql server elsewhere
+
+The volume ```./configs:/cfg`` holds the following files
+ - settings.xml 
+ - configuration.properties
+ - dependencies.xml
+ - repositories.xml
+
+The settings.xml file will be placed in the ~/.m2 folder
