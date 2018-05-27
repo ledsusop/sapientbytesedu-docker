@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export JAVA_HOME="/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt"
+export PATH=$PATH:$JAVA_HOME/bin
+
 wget http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz
 tarloc=$(pwd)
 cd /opt
