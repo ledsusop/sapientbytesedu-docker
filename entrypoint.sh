@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get install curl unzip
+
 wget http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz
 tarloc=$(pwd)
 cd /opt
@@ -11,7 +13,7 @@ export PATH=$PATH:$M2_HOME/bin
 cd /root
 
 rm -rf "/root/${PROJECT_NAME}-webapp"
-curl 'https://start.fenixedu.org/webapp.zip' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' --data "groupId=org.fenixedu&artifactId=${PROJECT_NAME}-webapp&name=${PROJECT_NAME}-webapp&mavenVersion=2.3.0&bennuVersion=${BENNU_VERSION}&dbHost=localhost&dbPort=3306&dbName=fenixedu-$PROJECT_NAME&dbUser=root&dbPassword=&generate=" --compressed -o webapp.zip
+curl 'https://start.fenixedu.org/webapp.zip' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' --data "groupId=org.fenixedu&artifactId=${PROJECT_NAME}-webapp&name=${PROJECT_NAME}-webapp&mavenVersion=2.4.0&bennuVersion=${BENNU_VERSION}&dbHost=localhost&dbPort=3306&dbName=fenixedu-$PROJECT_NAME&dbUser=root&dbPassword=&generate=" --compressed -o webapp.zip
 
 unzip -o webapp.zip
 VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version|grep -Ev '(^\[|Download\w+:)')
