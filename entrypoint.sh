@@ -1,7 +1,5 @@
 #!/bin/bash
 
-apt-get install curl unzip
-
 wget http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz
 tarloc=$(pwd)
 cd /opt
