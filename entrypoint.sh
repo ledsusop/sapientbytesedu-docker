@@ -5,7 +5,7 @@ tarloc=$(pwd)
 cd /opt
 sudo tar -xzvf ${tarloc}/apache-maven-3.5.3-bin.tar.gz
 
-export M2_HOME=/opt/apache-maven-3.2.5
+export M2_HOME=/opt/apache-maven-3.5.3
 export PATH=$PATH:$M2_HOME/bin
 
 cd /root
