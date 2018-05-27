@@ -3,7 +3,7 @@
 wget http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz
 tarloc=$(pwd)
 cd /opt
-sudo tar -xzvf ${tarloc}/apache-maven-3.5.3-bin.tar.gz
+tar -xzvf ${tarloc}/apache-maven-3.5.3-bin.tar.gz
 
 export M2_HOME=/opt/apache-maven-3.5.3
 export PATH=$PATH:$M2_HOME/bin
