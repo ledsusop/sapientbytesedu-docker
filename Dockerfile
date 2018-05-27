@@ -1,4 +1,4 @@
-FROM arm32v6/alpine
+FROM scratch
 
 COPY ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
