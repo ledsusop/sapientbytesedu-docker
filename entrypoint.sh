@@ -1,9 +1,9 @@
 #!/bin/bash
 
-wget http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz
-echo $(pwd)
+wget http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz
+tarloc=$(pwd)
 cd /opt
-sudo tar -xzvf /path/to/apache-maven-3.2.5-bin.tar.gz
+sudo tar -xzvf ${tarloc}/apache-maven-3.5.3-bin.tar.gz
 
 export M2_HOME=/opt/apache-maven-3.2.5
 export PATH=$PATH:$M2_HOME/bin
