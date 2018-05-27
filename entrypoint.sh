@@ -1,6 +1,7 @@
 #!/bin/bash
 
 wget http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz
+echo $(pwd)
 cd /opt
 sudo tar -xzvf /path/to/apache-maven-3.2.5-bin.tar.gz
 
