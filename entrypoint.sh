@@ -1,4 +1,12 @@
 #!/bin/bash
+
+wget http://www.mirrorservice.org/sites/ftp.apache.org/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz
+cd /opt
+sudo tar -xzvf /path/to/apache-maven-3.2.5-bin.tar.gz
+
+export M2_HOME=/opt/apache-maven-3.2.5
+export PATH=$PATH:$M2_HOME/bin
+
 cd /root
 
 rm -rf "/root/${PROJECT_NAME}-webapp"
