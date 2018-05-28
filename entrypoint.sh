@@ -11,6 +11,9 @@ export PATH=$PATH:$M2_HOME/bin
 echo "CURRENT PATH ${PATH}"
 echo "WHICH JAVA ${JAVA_HOME}"
 
+cd /usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
+ls -la
+
 cd /root
 
 rm -rf "/root/${PROJECT_NAME}-webapp"
