@@ -1,7 +1,7 @@
-FROM raspbian/jessie
+FROM jsurf/rpi-java
 
 RUN apt-get update && apt-get install -y \
-    oracle-java8-jdk \
+    wget \
     apt-utils \
     curl \
     unzip
