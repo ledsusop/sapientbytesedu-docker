@@ -1,6 +1,7 @@
-FROM hypriot/rpi-java
+FROM raspbian/jessie
 
 RUN apt-get update && apt-get install -y \
+    oracle-java8-jdk \
     apt-utils \
     curl \
     unzip
