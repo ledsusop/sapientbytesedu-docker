@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exec /installmaven.sh
+
 cd /root
 
 rm -rf "/root/${PROJECT_NAME}-webapp"
